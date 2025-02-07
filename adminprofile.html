@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - SMP N 3 Purwadadi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        height: 100vh;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: #4caf50;
+        padding: 20px;
+        color: white;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 15px 0;
+      }
+
+      .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s;
+        display: block;
+        padding: 10px;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #333;
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 30px;
+        background-color: white;
+      }
+
+      .main-content h1 {
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      .section {
+        margin-bottom: 30px;
+      }
+
+      .section h3 {
+        color: #4caf50;
+        margin-bottom: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-group button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .form-group button:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="#home">Dashboard</a></li>
+        <li><a href="#about">Edit Tentang Sekolah</a></li>
+        <li><a href="#facilities">Edit Fasilitas</a></li>
+        <li><a href="#gallery">Edit Galeri</a></li>
+        <li><a href="#achievements">Edit Prestasi</a></li>
+        <li><a href="#contact">Edit Kontak</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <!-- Dashboard -->
+      <section id="home" class="section">
+        <h1>Dashboard</h1>
+        <p>
+          Selamat datang di Admin Panel SMP N 3 Purwadadi. Silakan pilih menu di
+          sidebar untuk mengelola konten.
+        </p>
+      </section>
+
+      <!-- Edit Tentang Sekolah -->
+      <section id="about" class="section">
+        <h1>Edit Tentang Sekolah</h1>
+        <div class="form-group">
+          <label for="about-title">Judul</label>
+          <input
+            type="text"
+            id="about-title"
+            placeholder="Masukkan Judul Sekolah"
+          />
+        </div>
+        <div class="form-group">
+          <label for="about-description">Deskripsi</label>
+          <textarea
+            id="about-description"
+            rows="4"
+            placeholder="Masukkan Deskripsi Sekolah"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveAbout()">Simpan</button>
+        </div>
+      </section>
+
+      <!-- Edit Fasilitas -->
+      <section id="facilities" class="section">
+        <h1>Edit Fasilitas</h1>
+        <div class="form-group">
+          <label for="facilities-title">Judul Fasilitas</label>
+          <input
+            type="text"
+            id="facilities-title"
+            placeholder="Masukkan Judul Fasilitas"
+          />
+        </div>
+        <div class="form-group">
+          <label for="facilities-description">Deskripsi</label>
+          <textarea
+            id="facilities-description"
+            rows="4"
+            placeholder="Masukkan Deskripsi Fasilitas"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveFacilities()">Simpan</button>
+        </div>
+      </section>
+
+      <!-- Edit Galeri -->
+      <section id="gallery" class="section">
+        <h1>Edit Galeri</h1>
+        <div class="form-group">
+          <label for="gallery-title">Judul Galeri</label>
+          <input
+            type="text"
+            id="gallery-title"
+            placeholder="Masukkan Judul Galeri"
+          />
+        </div>
+        <div class="form-group">
+          <label for="gallery-description">Deskripsi</label>
+          <textarea
+            id="gallery-description"
+            rows="4"
+            placeholder="Masukkan Deskripsi Galeri"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="gallery-image">Upload Gambar</label>
+          <input type="file" id="gallery-image" />
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveGallery()">Simpan</button>
+        </div>
+      </section>
+
+      <!-- Edit Prestasi -->
+      <section id="achievements" class="section">
+        <h1>Edit Prestasi</h1>
+        <div class="form-group">
+          <label for="achievement-title">Judul Prestasi</label>
+          <input
+            type="text"
+            id="achievement-title"
+            placeholder="Masukkan Judul Prestasi"
+          />
+        </div>
+        <div class="form-group">
+          <label for="achievement-description">Deskripsi Prestasi</label>
+          <textarea
+            id="achievement-description"
+            rows="4"
+            placeholder="Masukkan Deskripsi Prestasi"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveAchievements()">Simpan</button>
+        </div>
+      </section>
+
+      <!-- Edit Kontak -->
+      <section id="contact" class="section">
+        <h1>Edit Kontak</h1>
+        <div class="form-group">
+          <label for="contact-address">Alamat</label>
+          <input
+            type="text"
+            id="contact-address"
+            placeholder="Masukkan Alamat"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Nomor Telepon</label>
+          <input
+            type="text"
+            id="contact-phone"
+            placeholder="Masukkan Nomor Telepon"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="Masukkan Email" />
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="saveContact()">Simpan</button>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 SMP N 3 Purwadadi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Function to save each section (mock function)
+      function saveAbout() {
+        alert("Tentang Sekolah disimpan!");
+      }
+
+      function saveFacilities() {
+        alert("Fasilitas disimpan!");
+      }
+
+      function saveGallery() {
+        alert("Galeri disimpan!");
+      }
+
+      function saveAchievements() {
+        alert("Prestasi disimpan!");
+      }
+
+      function saveContact() {
+        alert("Kontak disimpan!");
+      }
+    </script>
+  </body>
+</html>
