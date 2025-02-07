@@ -288,12 +288,24 @@
       </p>
       <div id="gallery-images">
         <div>
-          <img src="products/bb.jpeg" alt="Kegiatan Belajar Mengajar" />
-          <p>Kegiatan Belajar Mengajar di kelas yang penuh semangat.</p>
+          <img src="products/g.jpeg" alt="Kegiatan Belajar Mengajar" />
+          <p>Bersih Bersih Kelas</p>
         </div>
         <div>
-          <img src="products/bc.jpeg" alt="Kegiatan Ekstrakurikuler" />
-          <p>Siswa sedang berlatih dalam kegiatan ekstrakurikuler.</p>
+          <img src="products/a1.jpeg" alt="Kegiatan Ekstrakurikuler" />
+          <p>Makan Gratis.</p>
+        </div>
+        <div>
+          <img src="products/a.jpeg" alt="Kegiatan Ekstrakurikuler" />
+          <p>Isra Mi'raj.</p>
+        </div>
+        <div>
+          <img src="products/b.jpeg" alt="Kegiatan Ekstrakurikuler" />
+          <p>Isra Mi'raj.</p>
+        </div>
+        <div>
+          <img src="products/f.jpeg" alt="Kegiatan Ekstrakurikuler" />
+          <p>Isra Mi'raj.</p>
         </div>
       </div>
       <button onclick="prevImage()">Previous</button>
@@ -352,7 +364,7 @@
         <strong>Alamat:</strong> Jl. Raya Parapatan, Purwadadi, Kabupaten
         Subang, Jawa Barat
       </p>
-      <p><strong>Telepon:</strong>6283817090173</p>
+      <p><strong>Telepon:</strong>081234567890</p>
       <p><strong>Email:</strong> smpnpurwadadi@subang.sch.id</p>
       <div class="social-icons">
         <a href="https://www.facebook.com/spen3pur" target="_blank">
@@ -364,7 +376,7 @@
         >
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://wa.me/6283817090173" target="_blank">
+        <a href="https://wa.me/6281234567890" target="_blank">
           <i class="fab fa-whatsapp"></i>
         </a>
         <a
@@ -380,6 +392,127 @@
     <footer>
       <p>&copy; 2025 SMP Negeri 3 Purwadadi. All Rights Reserved.</p>
     </footer>
+
+    <script>
+      var currentImageIndex = 0;
+      var images = ["products/bb.jpeg", "products/bc.jpeg"];
+
+      function nextImage() {
+        if (currentImageIndex < images.length - 1) {
+          currentImageIndex++;
+        } else {
+          currentImageIndex = 0;
+        }
+        updateGallery();
+      }
+
+      function prevImage() {
+        if (currentImageIndex > 0) {
+          currentImageIndex--;
+        } else {
+          currentImageIndex = images.length - 1;
+        }
+        updateGallery();
+      }
+
+      function updateGallery() {
+        var galleryDiv = document.getElementById("gallery-images");
+        galleryDiv.innerHTML = `
+              <div>
+                <img src="${images[currentImageIndex]}" alt="Gallery Image"/>
+                <p>Image ${currentImageIndex + 1}</p>
+              </div>
+            `;
+      }
+    </script>
+    <!-- Data guru -->
+    <script>
+      const teachersData = [
+        {
+          no: 1,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        { no: 2, name: "-", subject: "Belum Tersedia", position: "-" },
+        {
+          no: 3,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        {
+          no: 4,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        {
+          no: 5,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        {
+          no: 6,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        {
+          no: 7,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+        {
+          no: 8,
+          name: "-",
+          subject: "Belum Tersedia",
+          position: "-",
+        },
+      ];
+
+      let currentPage = 0;
+      const itemsPerPage = 3;
+
+      function loadTable() {
+        const start = currentPage * itemsPerPage;
+        const end = start + itemsPerPage;
+        const currentData = teachersData.slice(start, end);
+
+        const tableBody = document.querySelector("#teachers-table tbody");
+        tableBody.innerHTML = ""; // Clear the table before loading new data
+
+        currentData.forEach((teacher) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${teacher.no}</td>
+            <td>${teacher.name}</td>
+            <td>${teacher.subject}</td>
+            <td>${teacher.position}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      function nextPage() {
+        if ((currentPage + 1) * itemsPerPage < teachersData.length) {
+          currentPage++;
+          loadTable();
+        }
+      }
+
+      function prevPage() {
+        if (currentPage > 0) {
+          currentPage--;
+          loadTable();
+        }
+      }
+
+      // Initial load
+      loadTable();
+    </script>
 
     <script>
       var currentImageIndex = 0;
