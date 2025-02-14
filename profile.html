@@ -13,7 +13,7 @@
 
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Times New Roman", serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
@@ -25,12 +25,12 @@
         background-size: cover;
         background-position: center;
         color: white;
-        padding: 120px 20px;
+        padding: 120px 20px; /* Increased padding to fit the resized image */
         text-align: center;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
       header h1 {
-        font-size: 4rem;
+        font-size: 4rem; /* Larger font size */
         margin: 0;
         font-weight: bold;
         letter-spacing: 2px;
@@ -57,7 +57,6 @@
       nav a:hover {
         background-color: #575757;
       }
-
       section {
         padding: 20px;
       }
@@ -158,61 +157,6 @@
       .social-icons a:hover {
         background-color: #575757;
       }
-
-      /* Media Queries for responsiveness */
-      @media (max-width: 768px) {
-        header {
-          padding: 80px 20px; /* Adjust padding for smaller screens */
-        }
-
-        header h1 {
-          font-size: 3rem; /* Smaller font size for mobile */
-        }
-
-        header p {
-          font-size: 1.2rem; /* Adjust paragraph size */
-        }
-
-        nav a {
-          font-size: 14px; /* Smaller navigation font size */
-          padding: 8px 15px; /* Adjust padding */
-        }
-
-        .gallery {
-          grid-template-columns: 1fr 1fr; /* Two columns for medium-sized screens */
-        }
-
-        .contact {
-          padding: 15px; /* Smaller padding */
-        }
-      }
-
-      @media (max-width: 480px) {
-        header {
-          padding: 60px 10px; /* Even smaller padding for very small screens */
-        }
-
-        header h1 {
-          font-size: 2.5rem; /* Smaller header font */
-        }
-
-        header p {
-          font-size: 1rem; /* Smaller paragraph font */
-        }
-
-        nav a {
-          font-size: 12px; /* Adjust font for small screens */
-          padding: 6px 10px; /* Adjust padding */
-        }
-
-        .gallery {
-          grid-template-columns: 1fr; /* Single column for small screens */
-        }
-
-        table {
-          font-size: 14px; /* Smaller font size for tables */
-        }
-      }
     </style>
   </head>
   <body>
@@ -262,11 +206,11 @@
       <h3>Misi</h3>
       <ul>
         <li>
-          Menanamkan keimanan dan ke taqwaan melalui pengamalan ajaran agama
+          Menanamkan keimanan dan ke taqwaan melaui pengamalan ajaran agama
         </li>
         <li>Menumbuhkan sikap santun</li>
         <li>Menumbuhkan rasa kesetiakawanan Sosial sesama teman</li>
-        <li>Mengoptimalkan proses Pembelajaran dan bimbingan Konseling</li>
+        <li>Mengoptimalkan proses Pembelajaran dan bimmbingan Konseling</li>
         <li>
           Menciptakan dan Menumbuhkan kedisiplinan dalam belajar dengan penuh
           tanggung jawab
@@ -276,6 +220,26 @@
           Menjalin Kerja sama yang Harmonis antar warga sekolah, dan lembaga
           yang terkait
         </li>
+      </ul>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+      <h2>Fasilitas Sekolah</h2>
+      <p>
+        SMP Negeri 3 Purwadadi menyediakan berbagai fasilitas yang mendukung
+        kegiatan belajar mengajar dan pengembangan diri siswa. Beberapa
+        fasilitas yang kami miliki antara lain:
+      </p>
+      <ul>
+        <li>Ruang Kelas yang Nyaman dan Modern</li>
+        <li>Laboratorium IPA yang Lengkap</li>
+        <li>Laboratorium Komputer</li>
+        <li>Perpustakaan dengan Koleksi Buku yang Beragam</li>
+        <li>Fasilitas Olahraga (Lapangan Basket, Sepak Bola, dll)</li>
+        <li>Ruang Ekstrakurikuler untuk Berbagai Kegiatan Siswa</li>
+        <li>Kantin yang Menyediakan Makanan Sehat</li>
+        <li>Wi-Fi Gratis untuk Mendukung Pembelajaran Daring</li>
       </ul>
     </section>
 
@@ -311,7 +275,6 @@
       <button onclick="prevImage()">Previous</button>
       <button onclick="nextImage()">Next</button>
     </section>
-
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
       <h2>Prestasi Siswa dan Siswi</h2>
@@ -355,7 +318,7 @@
       </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Contact Section -->
     <!-- Kontak Section -->
     <section id="contact" class="contact">
       <h2>Kontak Kami</h2>
@@ -387,104 +350,244 @@
         </a>
       </div>
     </section>
-
     <!-- Footer Section -->
     <footer>
       <p>&copy; 2025 SMP Negeri 3 Purwadadi. All Rights Reserved.</p>
     </footer>
 
     <script>
-      var currentImageIndex = 0;
-      var images = ["products/bb.jpeg", "products/bc.jpeg"];
-
-      function nextImage() {
-        if (currentImageIndex < images.length - 1) {
-          currentImageIndex++;
-        } else {
-          currentImageIndex = 0;
-        }
-        updateGallery();
-      }
-
-      function prevImage() {
-        if (currentImageIndex > 0) {
-          currentImageIndex--;
-        } else {
-          currentImageIndex = images.length - 1;
-        }
-        updateGallery();
-      }
-
-      function updateGallery() {
-        var galleryDiv = document.getElementById("gallery-images");
-        galleryDiv.innerHTML = `
-              <div>
-                <img src="${images[currentImageIndex]}" alt="Gallery Image"/>
-                <p>Image ${currentImageIndex + 1}</p>
-              </div>
-            `;
-      }
-    </script>
-    <!-- Data guru -->
-    <script>
       const teachersData = [
         {
           no: 1,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Drs. Sulatriyana, SH., M.MPd",
+          subject: "-",
+          position: "Kepala Sekolah",
         },
-        { no: 2, name: "-", subject: "Belum Tersedia", position: "-" },
+        {
+          no: 2,
+          name: "Bayu Herawansyah, S.Pd",
+          subject: "PJOK",
+          position: "GURU",
+        },
         {
           no: 3,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Nurdin, S.PdI",
+          subject: "Pendidikan Agama Islam",
+          position: "GURU",
         },
         {
           no: 4,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Hj. Acih Sugiarsih, S.Pd",
+          subject: "IPA",
+          position: "GURU",
         },
         {
           no: 5,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Neni Nurlaeni, S.Pd",
+          subject: "Bahasa Indonesia",
+          position: "GURU",
         },
         {
           no: 6,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Enung Azizah, S.PdI",
+          subject: "PAI",
+          position: "GURU",
         },
         {
           no: 7,
-          name: "-",
-          subject: "Belum Tersedia",
-          position: "-",
+          name: "Hj. Ika Tejamurti, S.Pd",
+          subject: "PKN",
+          position: "GURU",
+        },
+        { no: 8, name: "Kurniawati, S.E", subject: "IPS", position: "GURU" },
+        {
+          no: 9,
+          name: "Ipat Fatimah, M.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
         },
         {
-          no: 8,
-          name: "-",
+          no: 10,
+          name: "Mokhamad Kurdianto, S.Pd",
+          subject: "Matematika",
+          position: "GURU",
+        },
+        {
+          no: 11,
+          name: "Hj. Asut Sutarasa, SE",
+          subject: "IPS",
+          position: "GURU",
+        },
+        { no: 12, name: "Nurhayani, SE", subject: "TIK", position: "GURU" },
+        {
+          no: 13,
+          name: "Dede Suhendar, S.Pd",
+          subject: "Matematika",
+          position: "GURU",
+        },
+        {
+          no: 14,
+          name: "Lilis Adinurmalasari, S.Pd",
+          subject: "Bahasa Indonesia",
+          position: "GURU",
+        },
+        {
+          no: 15,
+          name: "Nunung Nurhikmah, SE",
+          subject: "Prakarya",
+          position: "GURU",
+        },
+        {
+          no: 16,
+          name: "Edi Heryanto, S.Pd",
+          subject: "TIK & Inggris",
+          position: "GURU",
+        },
+        {
+          no: 17,
+          name: "Ira Irawati Iriani, S.Pd",
+          subject: "Matematika",
+          position: "GURU",
+        },
+        {
+          no: 18,
+          name: "Nelawati, S.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
+        },
+        {
+          no: 19,
+          name: "Afifah Khaerun Nisa, S.Pd",
+          subject: "IPA",
+          position: "GURU",
+        },
+        {
+          no: 20,
+          name: "Rizal Wahyuda, S.Tr.Sn",
+          subject: "SBY",
+          position: "GURU",
+        },
+        {
+          no: 21,
+          name: "Widia Nita L. S.Pd",
           subject: "Belum Tersedia",
-          position: "-",
+          position: "GURU",
+        },
+        {
+          no: 22,
+          name: "Rusmita, A.Ma",
+          subject: "PAI",
+          position: "GURU",
+        },
+        {
+          no: 23,
+          name: "Bawon Sumiati, S.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
+        },
+        {
+          no: 24,
+          name: "Diat Bachtiar, S.Pd",
+          subject: "IPA",
+          position: "GURU",
+        },
+        {
+          no: 25,
+          name: "Ujang Rohmanudin, S.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
+        },
+        {
+          no: 26,
+          name: "Mamay Maesaroh, S.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
+        },
+        {
+          no: 27,
+          name: "Filma Alvionita, S.Pd",
+          subject: "Bahasa Indonesia",
+          position: "GURU",
+        },
+        {
+          no: 28,
+          name: "Soni Nugraha, S.Tr.Sn",
+          subject: "SBY",
+          position: "GURU",
+        },
+        {
+          no: 29,
+          name: "Asep Rifki Aulia E. S.Pd",
+          subject: "Bahasa Inggris",
+          position: "GURU",
+        },
+        {
+          no: 30,
+          name: "Dewi Nurkarimah, S.Pd",
+          subject: "Belum Tersedia",
+          position: "GURU",
+        },
+        {
+          no: 31,
+          name: "Wega Mawarni, S.Pd",
+          subject: "Belum Tersedia",
+          position: "GURU",
+        },
+        {
+          no: 32,
+          name: "Rahayu, S.Pd",
+          subject: "Belum Tersedia",
+          position: "GURU",
+        },
+        {
+          no: 33,
+          name: "Rahmat, S.Pd",
+          subject: "PJOK",
+          position: "GURU",
+        },
+        {
+          no: 34,
+          name: "Irma Dewi, S.Pd",
+          subject: "Belum Tersedia",
+          position: "GURU",
+        },
+        {
+          no: 36,
+          name: "Diah Sri Rahayu, S.Pd",
+          subject: "Belum Tersedia",
+          position: "GURU",
+        },
+        {
+          no: 37,
+          name: "Amsir Wiguna,S.Pd",
+          subject: "-",
+          position: "TENAGA TATA USAHA",
+        },
+        {
+          no: 38,
+          name: "Beni Nuryahya, Amd.Kom",
+          subject: "-",
+          position: "TENAGA TATA USAHA",
+        },
+        {
+          no: 39,
+          name: "Resti",
+          subject: "-",
+          position: "TENAGA TATA USAHA",
         },
       ];
 
-      let currentPage = 0;
-      const itemsPerPage = 3;
+      let currentPage = 1;
+      const rowsPerPage = 10;
 
-      function loadTable() {
-        const start = currentPage * itemsPerPage;
-        const end = start + itemsPerPage;
-        const currentData = teachersData.slice(start, end);
+      function displayTeachersData(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = page * rowsPerPage;
+        const teachersToDisplay = teachersData.slice(start, end);
 
         const tableBody = document.querySelector("#teachers-table tbody");
-        tableBody.innerHTML = ""; // Clear the table before loading new data
-
-        currentData.forEach((teacher) => {
+        tableBody.innerHTML = "";
+        teachersToDisplay.forEach((teacher) => {
           const row = document.createElement("tr");
           row.innerHTML = `
             <td>${teacher.no}</td>
@@ -497,26 +600,34 @@
       }
 
       function nextPage() {
-        if ((currentPage + 1) * itemsPerPage < teachersData.length) {
+        if (currentPage < Math.ceil(teachersData.length / rowsPerPage)) {
           currentPage++;
-          loadTable();
+          displayTeachersData(currentPage);
         }
       }
 
       function prevPage() {
-        if (currentPage > 0) {
+        if (currentPage > 1) {
           currentPage--;
-          loadTable();
+          displayTeachersData(currentPage);
         }
       }
 
-      // Initial load
-      loadTable();
+      // Initial display
+      displayTeachersData(currentPage);
     </script>
 
     <script>
       var currentImageIndex = 0;
-      var images = ["products/bb.jpeg", "products/bc.jpeg"];
+      var images = [
+        "products/bb.jpeg",
+        "products/bc.jpeg",
+        "products/g.jpeg",
+        "products/a1.jpeg",
+        "products/a.jpeg",
+        "products/b.jpeg",
+        "products/f.jpeg",
+      ];
 
       function nextImage() {
         if (currentImageIndex < images.length - 1) {
@@ -539,10 +650,10 @@
       function updateGallery() {
         var galleryImages = document.getElementById("gallery-images");
         galleryImages.innerHTML = `
-          <div>
-            <img src="${images[currentImageIndex]}" alt="Gallery Image" />
-            <p>Image ${currentImageIndex + 1}</p>
-          </div>`;
+      <div>
+        <img src="${images[currentImageIndex]}" alt="Gallery Image" />
+        <p>Image ${currentImageIndex + 1}</p>
+      </div>`;
       }
     </script>
   </body>
